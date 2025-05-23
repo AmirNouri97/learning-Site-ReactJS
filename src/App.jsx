@@ -4,12 +4,7 @@ import routes from "./routes";
 import Header from "./components/Header/Header";
 function App() {
   const Router = useRoutes(routes);
-  return (
-    <>
-      <Header />
-      {Router}
-    </>
-  );
+  return <>{Router}</>;
 }
 
 export default App;
