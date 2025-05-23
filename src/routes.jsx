@@ -8,6 +8,7 @@ const routes = [
   { path: "/article-info/:article-name", element: <ArticleInfo /> },
   { path: "/course-info/:course-name", element: <CourseInfo /> },
   { path: "/category-info/:category-name", element: <Category /> },
+  { path: "/*", element: <Index /> },
 ];
 
 export default routes;
