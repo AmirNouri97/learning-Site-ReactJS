@@ -6,7 +6,7 @@ export default function LandingCount({ count }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter((prev) => prev + 1);
-    }, 0.1);
+    }, 1);
     if (counter === count) {
       clearInterval(interval);
     }

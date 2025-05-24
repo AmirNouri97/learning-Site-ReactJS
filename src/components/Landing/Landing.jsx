@@ -159,7 +159,7 @@ export default function Landing() {
               </g>
             </svg>
             {/* <span className="landing-status__count">31,320</span> */}
-            <LandingCount count={31320} />
+            <LandingCount count={4560} />
             <span className="landing-status__text">
               دقیقه آموزش تولید کردیم
             </span>
