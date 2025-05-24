@@ -7,7 +7,7 @@ export default function CourseBox() {
       id: 1,
       title: "دوره پروژه محور متخصص جنگو",
       teacher: " رضا دولتی",
-      img: "images/courses/fareelancer.png",
+      img: "/images/courses/fareelancer.png",
       price: 1_000_000,
       usersCount: 500,
     },
@@ -15,7 +15,7 @@ export default function CourseBox() {
       id: 2,
       title: "دوره پروژه محور متخصص جنگو",
       teacher: " رضا دولتی",
-      img: "images/courses/jango.png",
+      img: "/images/courses/jango.png",
       price: 1_000_000,
       usersCount: 500,
     },
@@ -23,7 +23,7 @@ export default function CourseBox() {
       id: 3,
       title: "دوره پروژه محور متخصص جنگو",
       teacher: " رضا دولتی",
-      img: "images/courses/nodejs.png",
+      img: "/images/courses/nodejs.png",
       price: 1_000_000,
       usersCount: 500,
     },
@@ -31,7 +31,7 @@ export default function CourseBox() {
       id: 4,
       title: "دوره پروژه محور متخصص جنگو",
       teacher: " رضا دولتی",
-      img: "images/courses/python.png",
+      img: "/images/courses/python.png",
       price: 1_000_000,
       usersCount: 500,
     },
@@ -39,7 +39,7 @@ export default function CourseBox() {
       id: 5,
       title: "دوره پروژه محور متخصص جنگو",
       teacher: " رضا دولتی",
-      img: "images/courses/youtuber.png",
+      img: "/images/courses/youtuber.png",
       price: 1_000_000,
       usersCount: 500,
     },
@@ -47,7 +47,7 @@ export default function CourseBox() {
       id: 6,
       title: "دوره پروژه محور متخصص جنگو",
       teacher: " رضا دولتی",
-      img: "images/courses/js_project.png",
+      img: "/images/courses/js_project.png",
       price: 1_000_000,
       usersCount: 500,
     },
@@ -80,27 +80,27 @@ export default function CourseBox() {
                   </div>
                   <div className="course-box__rating">
                     <img
-                      src="images/svgs/star.svg"
+                      src="/images/svgs/star.svg"
                       alt="rating"
                       className="course-box__star"
                     />
                     <img
-                      src="images/svgs/star_fill.svg"
+                      src="/images/svgs/star_fill.svg"
                       alt="rating"
                       className="course-box__star"
                     />
                     <img
-                      src="images/svgs/star_fill.svg"
+                      src="/images/svgs/star_fill.svg"
                       alt="rating"
                       className="course-box__star"
                     />
                     <img
-                      src="images/svgs/star_fill.svg"
+                      src="/images/svgs/star_fill.svg"
                       alt="rating"
                       className="course-box__star"
                     />
                     <img
-                      src="images/svgs/star_fill.svg"
+                      src="/images/svgs/star_fill.svg"
                       alt="rating"
                       className="course-box__star"
                     />
