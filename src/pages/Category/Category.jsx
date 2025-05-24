@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import CourseBox from "../../components/CourseBox/CourseBox";
 import "./Category.css";
+import Pagination from "../../components/Pagination/Pagination";
 
 export default function Category() {
   return (
@@ -67,6 +68,7 @@ export default function Category() {
               </div>
             </div>
           </div>
+          <Pagination />
         </div>
       </section>
 
