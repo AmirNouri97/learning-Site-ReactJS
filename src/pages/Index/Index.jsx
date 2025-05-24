@@ -1,7 +1,10 @@
 import React from "react";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import Header from "../../components/Header/Header";
+import LastArticles from "../../components/LastArticles/LastArticles";
 import LastCourses from "../../components/LastCourses/LastCourses";
+import PopularCourses from "../../components/PopularCourses/PopularCourses";
+import PreSellCourses from "../../components/PreSellCourses/PreSellCourses";
 import "./Index.css";
 
 export default function Index() {
@@ -10,6 +13,9 @@ export default function Index() {
       <Header />
       <LastCourses />
       <AboutUs />
+      <PopularCourses />
+      <PreSellCourses />
+      <LastArticles />
     </div>
   );
 }
