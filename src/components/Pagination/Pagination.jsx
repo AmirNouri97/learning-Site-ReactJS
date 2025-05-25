@@ -10,7 +10,10 @@ export default function Pagination() {
           </a>
         </li>
         <li class="courses__pagination-item">
-          <a href="#" class="courses__pagination-link">
+          <a
+            href="#"
+            class="courses__pagination-link courses__pagination-link--active"
+          >
             1
           </a>
         </li>
@@ -20,10 +23,7 @@ export default function Pagination() {
           </a>
         </li>
         <li class="courses__pagination-item">
-          <a
-            href="#"
-            class="courses__pagination-link courses__pagination-link--active"
-          >
+          <a href="#" class="courses__pagination-link ">
             3
           </a>
         </li>
