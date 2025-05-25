@@ -26,17 +26,17 @@ export default function CourseInfo() {
           },
         ]}
       />
-      <section class="course-info">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <a href="#" class="course-info__link">
+      <section className="course-info">
+        <div className="container">
+          <div className="row">
+            <div className="col-6">
+              <a href="#" className="course-info__link">
                 آموزش برنامه نویسی فرانت اند
               </a>
-              <h1 class="course-info__title">
+              <h1 className="course-info__title">
                 آموزش 20 کتابخانه جاوااسکریپت برای بازار کار
               </h1>
-              <p class="course-info__text">
+              <p className="course-info__text">
                 امروزه کتابخانه‌ها کد نویسی را خیلی آسان و لذت بخش تر کرده اند.
                 به قدری که حتی امروزه هیچ شرکت برنامه نویسی پروژه های خود را با
                 Vanilla Js پیاده سازی نمی کند و همیشه از کتابخانه ها و فریمورک
@@ -44,37 +44,60 @@ export default function CourseInfo() {
                 عالی فرانت اند باشید، باید کتابخانه های کاربردی که در بازار کار
                 استفاده می شوند را به خوبی بلد باشید
               </p>
-              <div class="course-info__social-media">
-                <a href="#" class="course-info__social-media-item">
-                  <i class="fab fa-telegram-plane course-info__icon"></i>
+              <div className="course-info__social-media">
+                <a href="#" className="course-info__social-media-item">
+                  <i className="fab fa-telegram-plane course-info__icon"></i>
                 </a>
-                <a href="#" class="course-info__social-media-item">
-                  <i class="fab fa-twitter course-info__icon"></i>
+                <a href="#" className="course-info__social-media-item">
+                  <i className="fab fa-twitter course-info__icon"></i>
                 </a>
-                <a href="#" class="course-info__social-media-item">
-                  <i class="fab fa-facebook-f course-info__icon"></i>
+                <a href="#" className="course-info__social-media-item">
+                  <i className="fab fa-facebook-f course-info__icon"></i>
                 </a>
               </div>
             </div>
 
-            <div class="col-6">
+            <div className="col-6">
               <video
                 src=""
                 poster="/images/courses/js_project.png"
-                class="course-info__video"
+                className="course-info__video"
                 controls
               ></video>
             </div>
           </div>
         </div>
       </section>
-      <main class="main">
-        <div class="container">
-          <div class="row">
-            <div class="col-8">
-              <div class="course">
+      <main className="main">
+        <div className="container">
+          <div className="row">
+            <div className="col-8">
+              {/* Start Course Boxes */}
+              <div className="course">
                 <CourseDetailsBox />
               </div>
+              {/* finish Course Boxes */}
+              {/* Start Course Progress  */}
+              <div className="course-progress">
+                <div className="course-progress__header">
+                  <i className="fas fa-chart-line course-progress__icon"></i>
+                  <span className="course-progress__title">
+                    درصد پیشرفت دوره: 100%
+                  </span>
+                </div>
+                <div className="progress course-progress__bar">
+                  <div
+                    className="progress-bar progress-bar-striped progress-bar-animated"
+                    role="progressbar"
+                    aria-label="Animated striped example"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style={{ width: "75%" }}
+                  ></div>
+                </div>
+              </div>
+              {/* Finish Course Progress  */}
             </div>
           </div>
         </div>
