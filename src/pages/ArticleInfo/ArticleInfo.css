@@ -91,7 +91,7 @@
 
 .article-section__title {
   font-size: 2.4rem;
-  color: #008c25;
+  color: var(--primary-color);
   font-weight: bold;
   line-height: 1.2;
 }
@@ -147,25 +147,23 @@
 .suggestion-articles__right::before {
   content: "قدیمی تر";
   position: absolute;
-  top: -2rem;
+  top: -2.5rem;
   left: 2rem;
   font-size: 1.8rem;
-  color: #adb5db;
-  font-weight: bold;
-  transform: rotate(180deg);
+  color: var(--primary-color);
 }
 
 .suggestion-articles__left::before {
   content: "جدید تر";
   position: absolute;
-  top: -2rem;
+  top: -2.5rem;
   right: 2rem;
-  font-size: 1.5rem;
-  color: #adb5db;
+  font-size: 1.8rem;
+  color: var(--primary-color);
 }
 
 .suggestion-articles__icon-link {
-  color: #adb5db;
+  color: var(--primary-color);
 }
 
 .suggestion-articles__link {

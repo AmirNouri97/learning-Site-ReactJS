@@ -38,6 +38,7 @@ export default function CourseInfo() {
               <h1 className="course-info__title">
                 آموزش 20 کتابخانه جاوااسکریپت برای بازار کار
               </h1>
+
               <p className="course-info__text">
                 امروزه کتابخانه‌ها کد نویسی را خیلی آسان و لذت بخش تر کرده اند.
                 به قدری که حتی امروزه هیچ شرکت برنامه نویسی پروژه های خود را با

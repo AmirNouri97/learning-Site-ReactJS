@@ -2,12 +2,13 @@ import React from "react";
 import "./Topbar.css";
 export default function Topbar() {
   const themeColors = [
-    { primary: "#2bce56", bg: "#2bce5633", toolTip: "سبز" },
+    { primary: "#1eb35e", bg: "#1eb35e33", toolTip: "سبز" },
     { primary: "#ff8c00", bg: "#ff8c0033", toolTip: "نارنجی" },
     { primary: "#8e44ad", bg: "#8e44ad33", toolTip: "بنفش" },
     { primary: "#3498db", bg: "#3498db33", toolTip: "آبی" },
     { primary: "#d22c4e", bg: "#e91e6333", toolTip: "قرمز" },
   ];
+
   const handleChangeTheme = (color) => {
     document.documentElement.style.setProperty(
       "--primary-color",

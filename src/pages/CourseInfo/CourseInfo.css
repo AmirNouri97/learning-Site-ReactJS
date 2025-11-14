@@ -74,7 +74,7 @@
 }
 
 .progress-bar {
-  background-color: #1fbd50;
+  background-color: var(--primary-color);
 }
 
 /* Finish Course Progress Styles */
@@ -102,6 +102,9 @@
 
 .introduction__btns {
   margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  column-gap: 0.7rem;
 }
 
 .introduction__btns-item {
@@ -111,7 +114,7 @@
   padding: 0.8rem 1.5rem;
   font-weight: bold;
   font-size: 1.5rem;
-  margin: 0.7rem;
+  /* margin: 0.7rem; */
 }
 
 .introduction__btns-item:hover {
@@ -262,10 +265,10 @@
 
 .course-info__register {
   text-align: center;
-  background-color: #1fbd50;
+  background-color: var(--primary-color);
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 12px rgba(31, 189, 80, 36%);
+  box-shadow: 0 2px 12px var(--primary-color-bg);
 }
 
 .course-info__register-title {

@@ -23,13 +23,11 @@ export default function Courses() {
         ]}
       />
       {/* <!--------------------------------  Courses-Section  --------------------------------> */}
-      <section class="courses">
-        <div class="container">
-          <div class="courses-content">
-            <div class="container">
-              <div class="row">
-                <CourseBox />
-                <CourseBox />
+      <section className="courses">
+        <div className="container">
+          <div className="courses-content">
+            <div className="container">
+              <div className="row">
                 <CourseBox />
               </div>
             </div>
