@@ -1,4 +1,5 @@
 @font-face {
-    font-family: IRANSans;
-    src: url(../fonts/IRANSans/IRANSans.ttf);
+  font-family: IRANSans;
+  src: local("IRANSans"), url(../fonts/IRANSans/IRANSans.ttf);
+  font-display: swap;
 }

@@ -29,6 +29,7 @@ export default function Landing() {
                 " ما به هر قیمتی دوره آموزشی تولید نمی کنیم !",
                 "آکادمی برنامه نویسی سبزلرن",
               ],
+              wrapperClassName: "typeWriter-color",
             }}
           />
         </h1>
@@ -59,7 +60,7 @@ export default function Landing() {
               </g>
             </svg>
             {/* <span className="landing-status__count">31,071</span> */}
-            <LandingCount count={2071} />
+            <LandingCount count={30100} start={30100 - 1000} />
             <span className="landing-status__text">
               کاربر توی سبزلرن ثبت نام کردن
             </span>
@@ -100,7 +101,7 @@ export default function Landing() {
               <g></g>
             </svg>
             {/* <span className="landing-status__count">{courseCounter}</span> */}
-            <LandingCount count={40} />
+            <LandingCount count={59} start={0} />
             <span className="landing-status__text">دوره آموزشی داریم</span>
           </div>
 
@@ -159,7 +160,7 @@ export default function Landing() {
               </g>
             </svg>
             {/* <span className="landing-status__count">31,320</span> */}
-            <LandingCount count={4560} />
+            <LandingCount count={45600} start={45600 - 1000} />
             <span className="landing-status__text">
               دقیقه آموزش تولید کردیم
             </span>

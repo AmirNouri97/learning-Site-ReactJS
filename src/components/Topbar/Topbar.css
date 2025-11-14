@@ -29,6 +29,8 @@
 
 .top-bar__left {
   display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .top-bar__email,
@@ -47,5 +49,58 @@
   color: var(--primary-color);
   font-size: 2rem;
 }
+.top-bar__theme-colors {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--dark-color);
+  padding: 0.25rem;
+  height: 100%;
+  align-items: center;
+}
 
 /* Finish Top-Bar Styles */
+
+.top-bar__theme-color {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 0.1rem solid #7f7f7f;
+  cursor: pointer;
+  transition: transform 0.2s ease, border 0.2s ease;
+  position: relative;
+}
+
+.top-bar__theme-color:hover {
+  transform: scale(1.1);
+}
+
+/* 🔹 Tooltip */
+.tooltip-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 0.4rem;
+  position: absolute;
+  top: -2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

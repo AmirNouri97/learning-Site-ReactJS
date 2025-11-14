@@ -57,8 +57,8 @@ export default function CourseBox() {
     <>
       {courseInfo.length !== 0 &&
         courseInfo.map((course) => (
-          <div className="col-4">
-            <div className="course-box" key={course.id}>
+          <div className="col-4" key={course.id}>
+            <div className="course-box">
               <a href="#">
                 <img
                   src={course.img}

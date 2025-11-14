@@ -8,7 +8,7 @@
   color: var(--primary-color);
   border-radius: 0.3rem;
   padding: 0.4rem 1rem;
-  background-color: rgba(43, 206, 86, 0.2);
+  background-color: var(--primary-color-bg);
 }
 
 .course-info__title {

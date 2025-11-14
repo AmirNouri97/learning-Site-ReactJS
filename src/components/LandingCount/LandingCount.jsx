@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-export default function LandingCount({ count }) {
-  const [counter, setCounter] = useState(0);
+export default function LandingCount({ count, start }) {
+  const [counter, setCounter] = useState(start);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter((prev) => prev + 1);
-    }, 1);
+    }, 10);
     if (counter === count) {
       clearInterval(interval);
     }
