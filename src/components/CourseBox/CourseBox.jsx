@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CourseBox.css";
+import CircleSpinner from "../CircleSpinner/CircleSpinner";
 
 export default function CourseBox() {
+  const [isImgLoaded, setIsImgLoaded] = useState(false);
+
   const courseInfo = [
     {
       id: 1,
@@ -52,7 +55,7 @@ export default function CourseBox() {
       usersCount: 500,
     },
   ];
-
+  const onImgLoaded = () => setIsImgLoaded(true);
   return (
     <>
       {courseInfo.length !== 0 &&
@@ -64,7 +67,9 @@ export default function CourseBox() {
                   src={course.img}
                   alt="Course img"
                   className="course-box__img"
+                  onLoad={onImgLoaded}
                 />
+                {!isImgLoaded && <CircleSpinner />}
               </a>
               <div className="course-box__main">
                 <a href="#" className="course-box__title">

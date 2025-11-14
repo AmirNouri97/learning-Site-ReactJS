@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ArticleBox.css";
+import { ShimmerPostItem } from "react-shimmer-effects";
 export default function ArticleBox() {
   const articlesInfo = [
     {
@@ -24,18 +25,26 @@ export default function ArticleBox() {
         کتابخانه های مختلفی برای تسریع...`,
     },
   ];
+  const [articleLoaded, setArticleLoaded] = useState({});
+  const onArticleLoaded = (id) =>
+    setArticleLoaded((prev) => ({ ...prev, [id]: true }));
   return (
     <>
       {articlesInfo.length !== 0 &&
         articlesInfo.map((article) => (
           <div className="col-4" key={article.id}>
             <div className="article-card">
+              {!articleLoaded[article.id] && (
+                <ShimmerPostItem card title text cta />
+              )}
+
               <div className="article-card__header">
                 <a href="#" className="article-card__link-img">
                   <img
                     src={article.img}
                     className="article-card__img"
                     alt="Article Cover"
+                    onLoad={() => onArticleLoaded(article.id)}
                   />
                 </a>
               </div>
