@@ -68,6 +68,7 @@ export default function CourseBox() {
                   alt="Course img"
                   className="course-box__img"
                   onLoad={onImgLoaded}
+                  onErr
                 />
                 {!isImgLoaded && <CircleSpinner />}
               </a>
