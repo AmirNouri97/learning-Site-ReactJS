@@ -6,24 +6,24 @@ import { useEffect } from "react";
 import TestUseReducer from "./components/TestUseReducer/TestUseReducer";
 
 function App() {
-  // useEffect(() => {
-  //   const savedTheme = localStorage.getItem("theme");
-  //   if (!savedTheme) return;
-  //   const color = JSON.parse(savedTheme);
-  //   if (color) {
-  //     document.documentElement.style.setProperty(
-  //       "--primary-color",
-  //       color.primary
-  //     );
-  //     document.documentElement.style.setProperty(
-  //       "--primary-color-bg",
-  //       color.bg
-  //     );
-  //   }
-  // }, []);
-  // const Router = useRoutes(routes);
-  // return <>{Router}</>;
-  return <TestUseReducer />;
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (!savedTheme) return;
+    const color = JSON.parse(savedTheme);
+    if (color) {
+      document.documentElement.style.setProperty(
+        "--primary-color",
+        color.primary,
+      );
+      document.documentElement.style.setProperty(
+        "--primary-color-bg",
+        color.bg,
+      );
+    }
+  }, []);
+  const Router = useRoutes(routes);
+  return <>{Router}</>;
+  // return <TestUseReducer />;
 }
 
 export default App;
