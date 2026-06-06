@@ -5,7 +5,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import Input from "../../components/Form/Input";
+import Button from "../../components/Form/Button/Button";
 export default function Register() {
+  const registerNewUser = () => {
+    event.preventDefault();
+    console.log("user registered!");
+  };
   return (
     <>
       <Topbar />
@@ -53,10 +58,15 @@ export default function Register() {
               />
               <i className="login-form__password-icon fa fa-lock-open"></i>
             </div>
-            <button className="login-form__btn" type="submit">
+            <Button
+              className="login-form__btn"
+              type="submit"
+              disabled={false}
+              onClick={registerNewUser}
+            >
               <i className="login-form__btn-icon fa fa-user-plus"></i>
               <span className="login-form__btn-text">عضویت</span>
-            </button>
+            </Button>
           </form>
           <div className="login__des">
             <span className="login__des-title">سلام کاربر محترم:</span>

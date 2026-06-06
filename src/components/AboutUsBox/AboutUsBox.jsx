@@ -34,14 +34,14 @@ export default function AboutUsBox() {
     <>
       {aboutUsBoxInfos.length !== 0 &&
         aboutUsBoxInfos.map((box) => (
-          <div class="col-6">
-            <div class="about-us__box" key={box.id}>
-              <div class="about-us__box-right">
+          <div className="col-6">
+            <div className="about-us__box" key={box.id}>
+              <div className="about-us__box-right">
                 <i class={box.iconClass}></i>
               </div>
-              <div class="about-us__box-left">
-                <span class="about-us__box-title">{box.title}</span>
-                <span class="about-us__box-text">{box.text}</span>
+              <div className="about-us__box-left">
+                <span className="about-us__box-title">{box.title}</span>
+                <span className="about-us__box-text">{box.text}</span>
               </div>
             </div>
           </div>

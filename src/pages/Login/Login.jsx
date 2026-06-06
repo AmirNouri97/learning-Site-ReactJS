@@ -6,8 +6,13 @@ import Footer from "../../components/Footer/Footer";
 
 import "./Login.css";
 import Input from "../../components/Form/Input";
+import Button from "../../components/Form/Button/Button";
 
 export default function Login() {
+  const userLogin = () => {
+    event.preventDefault();
+    console.log("user Logined");
+  };
   return (
     <>
       <Topbar />
@@ -44,10 +49,15 @@ export default function Login() {
               />
               <i className="login-form__password-icon fa fa-lock-open"></i>
             </div>
-            <button className="login-form__btn" type="submit">
+            <Button
+              className="login-form__btn"
+              type="submit"
+              disabled={false}
+              onClick={userLogin}
+            >
               <i className="login-form__btn-icon fas fa-sign-out-alt"></i>
               <span className="login-form__btn-text">ورود</span>
-            </button>
+            </Button>
             <div className="login-form__password-setting">
               <label className="login-form__password-remember">
                 <input
