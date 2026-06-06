@@ -42,7 +42,7 @@ export default function Register() {
                 type="text"
                 placeholder="نام کاربری"
                 element="input"
-                validators={[
+                validations={[
                   requiredValidator(),
                   minValidator(8),
                   maxValidator(20),
