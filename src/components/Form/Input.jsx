@@ -1,6 +1,28 @@
+import { useReducer } from "react";
+import "./Input.css";
+
 export default function Input(props) {
+  const inputReducer = (state, action) => {
+    switch (action.type) {
+      case "CHANGE": {
+        return {
+          ...state,
+          value: action.value,
+          isValid: action.isValid,
+        };
+      }
+      default: {
+        return state;
+      }
+    }
+  };
+  const [mainInput, dispatch] = useReducer(inputReducer, {
+    isValid: false,
+    value: "",
+  });
+
   const onChangeHandler = (event) => {
-    console.log(event.target.value);
+    dispatch({ type: "CHANGE", value: event.target.value, isValid: true });
   };
 
   const element =
@@ -8,15 +30,17 @@ export default function Input(props) {
       <input
         type={props.type}
         placeholder={props.placeholder}
-        className={props.className}
+        className={`${props.className} ${mainInput.isValid ? "success" : "error"}`}
         onChange={onChangeHandler}
+        value={mainInput.value}
       ></input>
     ) : (
       <textarea
         type={props.type}
         placeholder={props.placeholder}
-        className={props.className}
+        className={`${props.className} ${mainInput.isValid ? "success" : "error"}`}
         onChange={onChangeHandler}
+        value={mainInput.value}
       />
     );
 
