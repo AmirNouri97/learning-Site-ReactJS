@@ -4,7 +4,7 @@ import Topbar from "../../components/Topbar/Topbar";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
-import Input from "../../components/Form/Input";
+import Input from "../../components/Form/Input/Input";
 import Button from "../../components/Form/Button/Button";
 export default function Register() {
   const registerNewUser = () => {
