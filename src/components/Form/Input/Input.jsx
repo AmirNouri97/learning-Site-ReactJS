@@ -1,21 +1,22 @@
 import { useReducer } from "react";
 import "./Input.css";
-
-export default function Input(props) {
-  const inputReducer = (state, action) => {
-    switch (action.type) {
-      case "CHANGE": {
-        return {
-          ...state,
-          value: action.value,
-          isValid: action.isValid,
-        };
-      }
-      default: {
-        return state;
-      }
+const inputReducer = (state, action) => {
+  switch (action.type) {
+    case "CHANGE": {
+      return {
+        ...state,
+        value: action.value,
+        isValid: action.isValid,
+      };
     }
-  };
+    default: {
+      return state;
+    }
+  }
+};
+export default function Input(props) {
+  console.log(props.validators);
+
   const [mainInput, dispatch] = useReducer(inputReducer, {
     isValid: false,
     value: "",

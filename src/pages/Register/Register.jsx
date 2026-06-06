@@ -6,6 +6,11 @@ import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import Input from "../../components/Form/Input/Input";
 import Button from "../../components/Form/Button/Button";
+import {
+  maxValidator,
+  minValidator,
+  requiredValidator,
+} from "../../validators/rules";
 export default function Register() {
   const registerNewUser = () => {
     event.preventDefault();
@@ -37,6 +42,11 @@ export default function Register() {
                 type="text"
                 placeholder="نام کاربری"
                 element="input"
+                validators={[
+                  requiredValidator(),
+                  minValidator(8),
+                  maxValidator(20),
+                ]}
               />
               <i className="login-form__username-icon fa fa-user"></i>
             </div>
