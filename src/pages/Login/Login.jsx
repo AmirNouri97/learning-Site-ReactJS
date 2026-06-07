@@ -12,8 +12,23 @@ import {
   minValidator,
   requiredValidator,
 } from "../../validators/rules";
-
+import useForm from "../../hooks/useForm";
 export default function Login() {
+  const [formState, onInputHandler] = useForm(
+    {
+      username: {
+        value: "",
+        isValid: false,
+      },
+      password: {
+        value: "",
+        isValid: false,
+      },
+    },
+    false,
+  );
+  console.log(formState);
+
   const userLogin = () => {
     event.preventDefault();
     console.log("user Logined");
@@ -40,6 +55,7 @@ export default function Login() {
               <Input
                 className="login-form__username-input"
                 type="text"
+                id="username"
                 placeholder="نام کاربری یا آدرس ایمیل"
                 element="input"
                 validations={[
@@ -47,6 +63,7 @@ export default function Login() {
                   minValidator(8),
                   maxValidator(20),
                 ]}
+                onInputHandler={onInputHandler}
               />
               <i className="login-form__username-icon fa fa-user"></i>
             </div>
@@ -54,6 +71,7 @@ export default function Login() {
               <Input
                 className="login-form__password-input"
                 type="password"
+                id="password"
                 placeholder="رمز عبور"
                 element="input"
                 validations={[
@@ -61,13 +79,14 @@ export default function Login() {
                   minValidator(8),
                   maxValidator(18),
                 ]}
+                onInputHandler={onInputHandler}
               />
               <i className="login-form__password-icon fa fa-lock-open"></i>
             </div>
             <Button
-              className="login-form__btn"
+              className={`login-form__btn ${formState.isFormValid ? "login-form__btn-success" : "login-form__btn-error"}`}
               type="submit"
-              disabled={false}
+              disabled={!formState.isFormValid}
               onClick={userLogin}
             >
               <i className="login-form__btn-icon fas fa-sign-out-alt"></i>

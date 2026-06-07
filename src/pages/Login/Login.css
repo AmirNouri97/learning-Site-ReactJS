@@ -105,8 +105,14 @@
   margin-top: 0.8rem;
   display: flex;
   align-items: center;
-  background-color: var(--primary-color);
   position: relative;
+}
+.login-form__btn-success {
+  background-color: var(--primary-color);
+}
+.login-form__btn-error {
+  background-color: var(--gray-color);
+  cursor: not-allowed;
 }
 .login-form__btn-icon {
   color: var(--white-color);
