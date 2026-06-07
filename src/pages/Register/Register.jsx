@@ -7,11 +7,32 @@ import { Link } from "react-router-dom";
 import Input from "../../components/Form/Input/Input";
 import Button from "../../components/Form/Button/Button";
 import {
+  emailValidator,
   maxValidator,
   minValidator,
   requiredValidator,
 } from "../../validators/rules";
+import useForm from "../../hooks/useForm";
 export default function Register() {
+  const [formState, onInputHandler] = useForm(
+    {
+      newusername: {
+        value: "",
+        isValid: false,
+      },
+      newpassword: {
+        value: "",
+        isValid: false,
+      },
+      email: {
+        value: "",
+        isValid: false,
+      },
+    },
+    false,
+  );
+  console.log(formState);
+
   const registerNewUser = () => {
     event.preventDefault();
     console.log("user registered!");
@@ -42,11 +63,13 @@ export default function Register() {
                 type="text"
                 placeholder="نام کاربری"
                 element="input"
+                id="newusername"
                 validations={[
                   requiredValidator(),
                   minValidator(8),
                   maxValidator(20),
                 ]}
+                onInputHandler={onInputHandler}
               />
               <i className="login-form__username-icon fa fa-user"></i>
             </div>
@@ -56,6 +79,13 @@ export default function Register() {
                 type="text"
                 placeholder="آدرس ایمیل"
                 element="input"
+                id="email"
+                validations={[
+                  requiredValidator(),
+                  minValidator(8),
+                  emailValidator(),
+                ]}
+                onInputHandler={onInputHandler}
               />
               <i className="login-form__password-icon fa fa-envelope"></i>
             </div>
@@ -63,15 +93,22 @@ export default function Register() {
               <Input
                 className="login-form__password-input"
                 type="password"
+                id="newpassword"
                 placeholder="رمز عبور"
                 element="input"
+                onInputHandler={onInputHandler}
+                validations={[
+                  requiredValidator(),
+                  minValidator(8),
+                  maxValidator(18),
+                ]}
               />
               <i className="login-form__password-icon fa fa-lock-open"></i>
             </div>
             <Button
-              className="login-form__btn"
+              className={`login-form__btn ${formState.isFormValid ? "login-form__btn-success" : "login-form__btn-error"}`}
               type="submit"
-              disabled={false}
+              disabled={!formState.isFormValid}
               onClick={registerNewUser}
             >
               <i className="login-form__btn-icon fa fa-user-plus"></i>
