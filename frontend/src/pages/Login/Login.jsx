@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Topbar from "../../components/Topbar/Topbar";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -14,7 +14,11 @@ import {
   requiredValidator,
 } from "../../validators/rules";
 import useForm from "../../hooks/useForm";
+import { BASE_URL } from "../../baseURL";
+import AuthContext from "../../context/authContext";
 export default function Login() {
+  const authContext = useContext(AuthContext);
+  const navigate = useNavigate();
   const [formState, onInputHandler] = useForm(
     {
       username: {
@@ -28,10 +32,29 @@ export default function Login() {
     },
     false,
   );
-  console.log(formState);
+  // console.log(formState);
 
   const userLogin = () => {
     event.preventDefault();
+    const userInfo = {
+      identifier: formState.inputs.username.value,
+      password: formState.inputs.password.value,
+    };
+    fetch(`${BASE_URL}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-type": "Application/json",
+      },
+      body: JSON.stringify(userInfo),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        authContext.login(result.user, result.accessToken);
+        if (result) {
+          navigate("/");
+        }
+      });
     console.log("user Logined");
   };
   return (

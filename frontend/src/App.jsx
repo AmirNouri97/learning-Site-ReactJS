@@ -3,7 +3,8 @@ import { useRoutes } from "react-router-dom";
 import routes from "./routes";
 import AuthContext from "./context/authContext";
 // import Header from "./components/Header/Header";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { BASE_URL } from "./baseURL";
 // import TestUseReducer from "./components/TestUseReducer/TestUseReducer";
 
 function App() {
@@ -26,15 +27,33 @@ function App() {
       );
     }
   }, []);
-  const login = (token) => {
+  const login = useCallback((userInfos, token) => {
     setToken(token);
+    setUserInfos(userInfos);
+    setIsLoggedIn(true);
     localStorage.setItem("user", JSON.stringify({ token }));
-  };
-  const logout = () => {
+  }, []);
+  const logout = useCallback(() => {
     setToken(null);
     setUserInfos({});
+    setIsLoggedIn(false);
     localStorage.removeItem("user");
-  };
+  }, []);
+  useEffect(() => {
+    const localStorageData = JSON.parse(localStorage.getItem("user"));
+    if (localStorageData) {
+      fetch(`${BASE_URL}/auth/me`, {
+        headers: {
+          Authorization: `Bearer ${localStorageData.token}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setIsLoggedIn(true);
+          setUserInfos(data);
+        });
+    }
+  }, [login]);
   const Router = useRoutes(routes);
   return (
     <AuthContext.Provider

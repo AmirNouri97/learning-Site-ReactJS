@@ -2,7 +2,7 @@ import "./Register.css";
 import Topbar from "../../components/Topbar/Topbar";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../../components/Form/Input/Input";
 import Button from "../../components/Form/Button/Button";
 import {
@@ -14,7 +14,11 @@ import {
 } from "../../validators/rules";
 import useForm from "../../hooks/useForm";
 import { BASE_URL } from "../../baseURL";
+import AuthContext from "./../../context/authContext";
+import { useContext } from "react";
 export default function Register() {
+  const authContext = useContext(AuthContext);
+  const navigate = useNavigate();
   const [formState, onInputHandler] = useForm(
     {
       name: {
@@ -40,7 +44,7 @@ export default function Register() {
     },
     false,
   );
-  console.log(formState);
+  // console.log(formState);
 
   const registerNewUser = () => {
     event.preventDefault();
@@ -58,7 +62,13 @@ export default function Register() {
         "content-type": "application/json",
       },
       body: JSON.stringify(newUserInfo),
-    }).then((res) => console.log(res));
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        navigate("/");
+        // console.log(result);
+        authContext.login(result.user, result.accessToken);
+      });
     console.log("user registered!");
   };
   return (

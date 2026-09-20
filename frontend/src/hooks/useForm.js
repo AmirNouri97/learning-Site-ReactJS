@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useCallback, useReducer } from "react";
 const formReducer = (state, action) => {
   switch (action.type) {
     case "INPUT_CHANGE": {
@@ -33,14 +33,14 @@ const useForm = (initInputs, initFormIsValid) => {
     inputs: initInputs,
     isFormValid: initFormIsValid,
   });
-  const onInputHandler = (id, value, isValid) => {
+  const onInputHandler = useCallback((id, value, isValid) => {
     dispatch({
       type: "INPUT_CHANGE",
       value,
       isValid,
       inputID: id,
     });
-  };
+  }, []);
   return [formState, onInputHandler];
 };
 export default useForm;
