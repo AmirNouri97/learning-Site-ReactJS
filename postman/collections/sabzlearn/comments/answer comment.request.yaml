@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://localhost:4000/v1/comments/answer/635091df49de41347dfbae48
+method: POST
+body:
+  type: urlencoded
+  content:
+    body: دقیقا
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 3000

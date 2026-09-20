@@ -1,0 +1,36 @@
+$kind: http-request
+url: http://localhost:4000/v1/articles/vue-or-react-new
+method: GET
+body:
+  type: formdata
+  content:
+    - type: file
+      key: cover
+      src:
+        - /C:/Users/AliZ/Desktop/empt  desk 1401.12.29/1flyingRocket.png
+    - type: text
+      key: title
+      value: پست جدید تست
+    - type: text
+      key: description
+      value: توضیحات پست جدید تست
+    - type: text
+      key: body
+      value: "متن تست پست جدید متن تست پست جدید متن تست پست جدید متن تست پست جدید متن تست پست جدید متن تست پست جدید متن تست پست جدید متن تست پست جدید متن تست پست جدید "
+    - type: text
+      key: shortName
+      value: vue-or-react-new
+    - type: text
+      key: publish
+      value: "1"
+    - type: text
+      key: creator
+      value: 634e6b0e1d5142b91afa9bb3
+    - type: text
+      key: categoryID
+      value: 6345cbd132c10de974957632
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 4000

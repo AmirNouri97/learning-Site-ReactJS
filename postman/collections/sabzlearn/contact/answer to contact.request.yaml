@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:4000/v1/contact/answer
+method: POST
+body:
+  type: urlencoded
+  content:
+    email: helloworld@yopmail.com
+    answer: "سلام. جواب تست سلام. جواب تست سلام. جواب تست "
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 4000

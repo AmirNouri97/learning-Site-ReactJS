@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://localhost:4000/v1/comments
+method: POST
+body:
+  type: urlencoded
+  content:
+    body: " خیلی خوب بود"
+    courseShortName: npm
+    score: "5"
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 2000

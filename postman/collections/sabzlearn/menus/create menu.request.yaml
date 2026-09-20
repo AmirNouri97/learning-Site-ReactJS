@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:4000/v1/menus/
+method: POST
+body:
+  type: urlencoded
+  content:
+    title: تست 1
+    href: test
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 4000

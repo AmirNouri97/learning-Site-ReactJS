@@ -1,0 +1,24 @@
+$kind: http-request
+url: http://localhost:4000/v1/courses/63ac0dcca3afd7323a7bb285/sessions
+method: POST
+body:
+  type: formdata
+  content:
+    - type: file
+      key: video
+      src:
+        - /C:/Users/AliZ/Desktop/sample-mp4-file-small.mp4
+    - type: text
+      key: title
+      value: معرفی
+    - type: text
+      key: time
+      value: "20"
+    - type: text
+      key: free
+      value: "1"
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 5000

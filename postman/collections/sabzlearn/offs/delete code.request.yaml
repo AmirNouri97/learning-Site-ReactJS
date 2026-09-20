@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:4000/v1/offs/64320186311ef6e858d6561f
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 5000

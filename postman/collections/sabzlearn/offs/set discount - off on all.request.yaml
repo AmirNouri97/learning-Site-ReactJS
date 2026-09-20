@@ -1,0 +1,13 @@
+$kind: http-request
+name: set discount / off on all
+url: http://localhost:4000/v1/offs/all
+method: POST
+body:
+  type: urlencoded
+  content:
+    discount: "10"
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 3000

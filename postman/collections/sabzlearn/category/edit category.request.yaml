@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:4000/v1/category/6431926e19f9447c1427bb89
+method: PUT
+body:
+  type: urlencoded
+  content:
+    title: new Cat
+    name: cat test
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 3000

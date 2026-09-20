@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:4000/v1/courses/npm/6345daddda1fd01ed3545316
+method: GET
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 9000

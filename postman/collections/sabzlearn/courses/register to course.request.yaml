@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://localhost:4000/v1/courses/63ac0dcca3afd7323a7bb285/register
+method: POST
+body:
+  type: urlencoded
+  content:
+    price: "500000"
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 13000

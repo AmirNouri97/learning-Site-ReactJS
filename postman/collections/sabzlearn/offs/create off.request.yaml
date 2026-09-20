@@ -1,0 +1,15 @@
+$kind: http-request
+url: http://localhost:4000/v1/offs
+method: POST
+body:
+  type: urlencoded
+  content:
+    code: newtest
+    percent: "10"
+    course: 6345cda6474f74e04218f6f7
+    max: "80"
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 2000

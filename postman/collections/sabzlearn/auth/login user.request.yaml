@@ -1,0 +1,23 @@
+$kind: http-request
+url: http://localhost:4000/v1/auth/login
+method: POST
+body:
+  type: urlencoded
+  content:
+    - key: username
+      value: admin
+      disabled: true
+    - key: identifier
+      value: admin@gmail.com
+    - key: password
+      value: adminadmin
+    - key: confirmPassword
+      value: adminadmin
+      disabled: true
+    - key: name
+      value: admin ali
+      disabled: true
+    - key: phone
+      value: "09123456789"
+      disabled: true
+order: 3000

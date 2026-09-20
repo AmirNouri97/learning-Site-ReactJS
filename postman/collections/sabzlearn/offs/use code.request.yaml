@@ -1,0 +1,12 @@
+$kind: http-request
+url: http://localhost:4000/v1/offs/bs35
+method: POST
+body:
+  type: urlencoded
+  content:
+    course: 635d494ed4d9250c10a1dadc
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 4000

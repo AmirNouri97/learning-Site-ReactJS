@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:4000/v1/tickets/departments-subs/63b6888a5763c3034ca862b0
+method: GET
+auth:
+  type: noauth
+order: 5000

@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:4000/v1/auth/register
+method: POST
+body:
+  type: urlencoded
+  content:
+    username: admin
+    email: admin@gmail.com
+    password: adminadmin
+    confirmPassword: adminadmin
+    name: admin ali
+    phone: "09123456789"
+order: 2000

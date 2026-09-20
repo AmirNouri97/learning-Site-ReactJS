@@ -1,0 +1,33 @@
+$kind: http-request
+url: http://localhost:4000/v1/courses
+method: POST
+body:
+  type: formdata
+  content:
+    - type: text
+      key: name
+      value: آموزش chatgpt
+    - type: text
+      key: description
+      value: تست متن توضیحات
+    - type: file
+      key: cover
+      src:
+        - /C:/Users/AliZ/Desktop/empt  desk 1401.12.29/bg_space_seamless_1.png
+    - type: text
+      key: shortName
+      value: chat-gpt
+    - type: text
+      key: price
+      value: "0"
+    - type: text
+      key: status
+      value: start
+    - type: text
+      key: categoryID
+      value: 635ef447f058a6af04d00510
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 2000

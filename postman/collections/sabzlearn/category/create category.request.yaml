@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:4000/v1/category
+method: POST
+body:
+  type: urlencoded
+  content:
+    title: newCat
+    name: cat test
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 2000

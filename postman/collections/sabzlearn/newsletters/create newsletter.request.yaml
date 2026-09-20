@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://localhost:4000/v1/newsletters
+method: POST
+body:
+  type: urlencoded
+  content:
+    email: test@newsletter.com
+auth:
+  type: noauth
+order: 2000

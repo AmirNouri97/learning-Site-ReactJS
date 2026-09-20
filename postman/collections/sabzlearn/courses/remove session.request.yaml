@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:4000/v1/courses/sessions/6431f72f4b10e7bd22e6013c
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 7000

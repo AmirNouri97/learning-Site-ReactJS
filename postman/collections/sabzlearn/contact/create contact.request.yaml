@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:4000/v1/contact
+method: POST
+body:
+  type: urlencoded
+  content:
+    name: ali
+    email: ali@ali.com
+    phone: "09123456789"
+    body: "سلام من علی هستم سلام من علی هستم سلام من علی هستم سلام من علی هستم "
+auth:
+  type: noauth
+order: 2000

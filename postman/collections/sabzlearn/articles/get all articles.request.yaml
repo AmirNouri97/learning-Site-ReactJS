@@ -1,0 +1,36 @@
+$kind: http-request
+url: http://localhost:4000/v1/articles
+method: GET
+body:
+  type: formdata
+  content:
+    - type: file
+      key: cover
+      src:
+        - /C:/Users/AliZ/Desktop/empt  desk 1401.12.29/2.PNG
+    - type: text
+      key: title
+      value: wer
+    - type: text
+      key: description
+      value: wwereee
+    - type: text
+      key: body
+      value: ee
+    - type: text
+      key: shortName
+      value: ee
+    - type: text
+      key: publish
+      value: "1"
+    - type: text
+      key: creator
+      value: 507f191e810c19729de860ea
+    - type: text
+      key: categoryID
+      value: 507f191e810c19729de860ea
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 3000

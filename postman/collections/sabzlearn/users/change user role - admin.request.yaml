@@ -1,0 +1,24 @@
+$kind: http-request
+url: http://localhost:4000/v1/users/role
+method: PUT
+body:
+  type: urlencoded
+  content:
+    - key: id
+      value: 635bd2be3b1c31520471f4a4
+    - key: role
+      value: USER
+    - key: email
+      value: ali@gmail.com
+      disabled: true
+    - key: password
+      value: adminadmin
+      disabled: true
+    - key: phone
+      value: "09123456789"
+      disabled: true
+auth:
+  type: bearer
+  credentials:
+    token: ""
+order: 6000
