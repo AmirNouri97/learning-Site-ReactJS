@@ -31,6 +31,7 @@
   position: relative;
   color: #7f8187;
   flex-wrap: wrap;
+  line-height: 100%;
 }
 
 .main-header__link:hover {
