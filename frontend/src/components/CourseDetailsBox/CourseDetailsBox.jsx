@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import "./CourseDetailsBox.css";
-export default function CourseDetailsBox() {
+export default function CourseDetailsBox(props) {
+  const { courseDetails, courseUpdated } = props;
+  console.log(courseDetails);
+
   const [courseDetailBox, setCourseDetailBox] = useState([
     {
       id: 1,
       title: "وضعیت دوره :",
-      subtitle: "به اتمام رسیده",
+      subtitle: `${courseDetails.isComplete === 1 ? "به اتمام رسیده" : "درحال برگزاری"}`,
       icon: "graduation-cap",
     },
     { id: 2, title: "مدت زمان دوره", subtitle: "19 ساعت", icon: "clock" },
     {
       id: 3,
       title: "آخرین بروزرسانی",
-      subtitle: "1401/03/02",
+      subtitle: `${courseUpdated.slice(0, 10)}`,
       icon: "calendar-alt",
     },
-    { id: 4, title: "روش پشتیبانی", subtitle: "آنلاین", icon: "user-alt" },
+    {
+      id: 4,
+      title: "روش پشتیبانی",
+      subtitle: `${courseDetails.support}`,
+      icon: "user-alt",
+    },
     { id: 5, title: "پیش نیاز :", subtitle: "HTML CSS", icon: "info-circle" },
     {
       id: 6,
@@ -33,7 +41,7 @@ export default function CourseDetailsBox() {
               <div className="course-boxes__box">
                 <div className="course-boxes__box-right">
                   <i
-                    class={`course-boxes__box-right-icon fas fa-${course.icon}`}
+                    className={`course-boxes__box-right-icon fas fa-${course.icon}`}
                   ></i>
                 </div>
                 <div className="course-boxes__box-left">
