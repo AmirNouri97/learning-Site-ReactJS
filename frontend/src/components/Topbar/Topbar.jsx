@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Topbar.css";
+import { BASE_URL } from "../../baseURL";
+import { Link } from "react-router-dom";
 export default function Topbar() {
   const themeColors = [
     { primary: "#1eb35e", bg: "#1eb35e33", toolTip: "سبز" },
@@ -12,11 +14,23 @@ export default function Topbar() {
   const handleChangeTheme = (color) => {
     document.documentElement.style.setProperty(
       "--primary-color",
-      color.primary
+      color.primary,
     );
     document.documentElement.style.setProperty("--primary-color-bg", color.bg);
     localStorage.setItem("theme", JSON.stringify(color));
     console.log(color);
+  };
+
+  const [allTopbarLinks, setAllTopbarLinks] = useState([]);
+
+  useEffect(() => {
+    fetch(`${BASE_URL}/menus/topbar`)
+      .then((res) => res.json())
+      .then((data) => setAllTopbarLinks(data));
+  }, []);
+  const getRandomItemsFromArray = (arr, randomCount) => {
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, randomCount);
   };
 
   return (
@@ -25,41 +39,13 @@ export default function Topbar() {
         <div className="top-bar__content">
           <div className="top-bar__right">
             <ul className="top-bar__menu">
-              <li className="top-bar__item">
-                <a href="#" className="top-bar__link">
-                  آموزش Html
-                </a>
-              </li>
-              <li className="top-bar__item">
-                <a href="#" className="top-bar__link">
-                  آموزش Css
-                </a>
-              </li>
-              <li className="top-bar__item">
-                <a href="#" className="top-bar__link">
-                  آموزش جاوا اسکریپت
-                </a>
-              </li>
-              <li className="top-bar__item">
-                <a href="#" className="top-bar__link">
-                  آموزش بوت استرپ
-                </a>
-              </li>
-              <li className="top-bar__item">
-                <a href="#" className="top-bar__link">
-                  آموزش پایتون
-                </a>
-              </li>
-              <li className="top-bar__item">
-                <a href="#" className="top-bar__link">
-                  آموزش ری‌اکت
-                </a>
-              </li>
-              <li className="top-bar__item">
-                <a href="#" className="top-bar__link">
-                  20,000 تومان
-                </a>
-              </li>
+              {getRandomItemsFromArray(allTopbarLinks, 5).map((link) => (
+                <li key={link._id} className="top-bar__item">
+                  <Link to={link.href} className="top-bar__link">
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="top-bar__left">
@@ -92,4 +78,41 @@ export default function Topbar() {
       </div>
     </div>
   );
+}
+{
+  /* <li className="top-bar__item">
+                <Link to="#" className="top-bar__link">
+                  آموزش Html
+                </Link>
+              </li>
+              <li className="top-bar__item">
+                <a href="#" className="top-bar__link">
+                  آموزش Css
+                </a>
+              </li>
+              <li className="top-bar__item">
+                <a href="#" className="top-bar__link">
+                  آموزش جاوا اسکریپت
+                </a>
+              </li>
+              <li className="top-bar__item">
+                <a href="#" className="top-bar__link">
+                  آموزش بوت استرپ
+                </a>
+              </li>
+              <li className="top-bar__item">
+                <a href="#" className="top-bar__link">
+                  آموزش پایتون
+                </a>
+              </li>
+              <li className="top-bar__item">
+                <a href="#" className="top-bar__link">
+                  آموزش ری‌اکت
+                </a>
+              </li>
+              <li className="top-bar__item">
+                <a href="#" className="top-bar__link">
+                  20,000 تومان
+                </a>
+              </li> */
 }

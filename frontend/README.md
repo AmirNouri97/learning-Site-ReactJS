@@ -59,3 +59,5 @@ This project is open source and available under the MIT License.
 
 Contact
 Created by Amir Nouri — feel free to reach out if you have any questions or suggestions!
+
+topbar links are dynamic.in every render they change to a new one.

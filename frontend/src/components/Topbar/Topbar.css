@@ -21,12 +21,29 @@
 }
 
 .top-bar__link {
+  position: relative;
   color: var(--dark-color);
-  transition: all 400ms ease;
+  transition: all 300ms ease;
   font-size: 1.5rem;
   padding: 0 1rem;
 }
-
+.top-bar__link:hover {
+  color: var(--primary-color);
+}
+.top-bar__link::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  left: 50%;
+  bottom: -1rem;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+.top-bar__link:hover::after {
+  width: 80%;
+}
 .top-bar__left {
   display: flex;
   gap: 1rem;
@@ -67,7 +84,9 @@
   border-radius: 30%;
   border: 0.1rem solid #7f7f7f;
   cursor: pointer;
-  transition: transform 0.2s ease, border 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border 0.2s ease;
   position: relative;
 }
 
