@@ -1,11 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import "./CommentsTextArea.css";
 import AuthContext from "../../context/authContext";
 import { Link } from "react-router-dom";
 
-export default function CommentsTextArea({ comments }) {
+export default function CommentsTextArea({ comments, submitComment }) {
+  const [newCommentBody, setNewCommentBody] = useState("");
   const authContext = useContext(AuthContext);
+
+  const onChangeHandler = (event) => setNewCommentBody(event.target.value);
+
   return (
     <div className="comments">
       <div className="comments__header">
@@ -15,15 +19,15 @@ export default function CommentsTextArea({ comments }) {
         <span className="comments__header-title">نظرات</span>
       </div>
       <div className="comments__content">
-        {comments.length === 0 ? (
+        {comments?.length === 0 ? (
           <div className="alert alert-warning">
             هنوز کامنتی برای این دوره ثبت نشده
           </div>
         ) : (
           <>
-            {comments.map((comment) => (
+            {comments?.map((comment) => (
               <>
-                <div className="comments__item">
+                <div className="comments__item" key={comment._id}>
                   <div className="comments__question">
                     <div className="comments__question-header">
                       <div className="comments__question-header-right">
@@ -119,9 +123,17 @@ export default function CommentsTextArea({ comments }) {
             </div>
             <div className="comments__respond-content">
               <div className="comments__respond-title">دیدگاه شما *</div>
-              <textarea className="comments__score-input-respond"></textarea>
+              <textarea
+                className="comments__score-input-respond"
+                onChange={onChangeHandler}
+                value={newCommentBody}
+              ></textarea>
             </div>
-            <button type="submit" className="comments__respond-btn">
+            <button
+              type="submit"
+              className="comments__respond-btn"
+              onClick={() => submitComment(newCommentBody)}
+            >
               ارسال
             </button>
           </div>

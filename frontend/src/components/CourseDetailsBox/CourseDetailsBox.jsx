@@ -8,20 +8,20 @@ export default function CourseDetailsBox(props) {
     {
       id: 1,
       title: "وضعیت دوره :",
-      subtitle: `${courseDetails.isComplete === 1 ? "به اتمام رسیده" : "درحال برگزاری"}`,
+      subtitle: `${courseDetails?.isComplete === 1 ? "به اتمام رسیده" : "درحال برگزاری"}`,
       icon: "graduation-cap",
     },
     { id: 2, title: "مدت زمان دوره", subtitle: "19 ساعت", icon: "clock" },
     {
       id: 3,
       title: "آخرین بروزرسانی",
-      subtitle: `${courseUpdated.slice(0, 10)}`,
+      subtitle: `${courseUpdated?.slice(0, 10)}`,
       icon: "calendar-alt",
     },
     {
       id: 4,
       title: "روش پشتیبانی",
-      subtitle: `${courseDetails.support}`,
+      subtitle: `${courseDetails?.support}`,
       icon: "user-alt",
     },
     { id: 5, title: "پیش نیاز :", subtitle: "HTML CSS", icon: "info-circle" },

@@ -9,6 +9,7 @@ import CommentsTextArea from "../../components/CommentsTextArea/CommentsTextArea
 import Accordion from "react-bootstrap/Accordion";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../baseURL";
+import swal from "sweetalert";
 
 export default function CourseInfo() {
   const [comments, setComments] = useState([]);
@@ -45,6 +46,31 @@ export default function CourseInfo() {
         setUpdatdAt([]);
       });
   }, [courseName]);
+
+  const submitComment = (newCommentBody) => {
+    const localStorageData = JSON.parse(localStorage.getItem("user"));
+
+    fetch(`${BASE_URL}/comments`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorageData.token}`,
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        body: newCommentBody,
+        score: 5,
+        courseShortName: courseName,
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) =>
+        swal({
+          title: "نظر شما با موفقیت ثبت شد",
+          icon: "success",
+          buttons: "تایید",
+        }),
+      );
+  };
   return (
     <>
       <Topbar />
@@ -223,7 +249,7 @@ export default function CourseInfo() {
                       <Accordion defaultActiveKey="0">
                         <Accordion.Item eventKey="0" className="accordion">
                           <Accordion.Header>جلسات دوره</Accordion.Header>
-                          {sessions.map((session, index) => (
+                          {sessions?.map((session, index) => (
                             <Accordion.Body
                               key={session._id}
                               className="introduction__accordion-body"
@@ -315,7 +341,10 @@ export default function CourseInfo() {
                   {/* Finish Introduction  */}
 
                   {/* comments textArea */}
-                  <CommentsTextArea comments={comments} />
+                  <CommentsTextArea
+                    comments={comments}
+                    submitComment={submitComment}
+                  />
                   {/* finish textArea */}
                 </div>
                 <div className="col-4">
@@ -352,7 +381,7 @@ export default function CourseInfo() {
                           <div className="course-info__total-comment">
                             <i className="far fa-comments course-info__total-comment-icon"></i>
                             <span className="course-info__total-comment-text">
-                              {comments.length} دیدگاه
+                              {comments?.length} دیدگاه
                             </span>
                           </div>
                           <div className="course-info__total-view">
