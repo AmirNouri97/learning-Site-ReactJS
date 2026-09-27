@@ -1,9 +1,16 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import CourseBox from "../CourseBox/CourseBox";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import "./LastCourses.css";
+import { BASE_URL } from "../../baseURL";
 
 export default function LastCourses() {
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    fetch(`${BASE_URL}/courses`)
+      .then((res) => res.json())
+      .then((allCourses) => setCourses(allCourses));
+  }, []);
   return (
     <div className="courses">
       <div className="container">
@@ -16,7 +23,9 @@ export default function LastCourses() {
         <div className="courses-content">
           <div className="container">
             <div className="row">
-              <CourseBox />
+              {courses.slice(0, 6).map((course) => (
+                <CourseBox key={course._id} {...course} />
+              ))}
             </div>
           </div>
         </div>

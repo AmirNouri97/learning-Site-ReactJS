@@ -25,13 +25,16 @@ export default function Navbar() {
 
             <ul className="main-header__menu">
               <li className="main-header__item">
-                <a href="#" className="main-header__link">
+                <Link to="/" className="main-header__link">
                   صفحه اصلی
-                </a>
+                </Link>
               </li>
               {allMenus.map((menu) => (
                 <li className="main-header__item" key={menu._id}>
-                  <Link to={menu.href} className="main-header__link">
+                  <Link
+                    to={`/category-info/${menu.href}`}
+                    className="main-header__link"
+                  >
                     {menu.title}
                     {menu.submenus && menu.submenus.length !== 0 && (
                       <>
@@ -43,7 +46,7 @@ export default function Navbar() {
                               className="main-header__dropdown-item"
                             >
                               <Link
-                                to={submenu.href}
+                                to={`/${submenu.href}`}
                                 className="main-header__dropdown-link"
                               >
                                 {submenu.title}
